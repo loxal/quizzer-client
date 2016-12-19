@@ -1,0 +1,18 @@
+# build tool specific
+target/
+
+*.jks
+
+build/
+.gradle
+
+# IntelliJ-specific
+\.idea/workspace\.xml
+out/
+
+# Android Studio specific
+local.properties
+
+# Eclipse-specific
+.project
+.classpath

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
+ * Copyright 2017 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
  */
 
 package net.loxal.quizzer.client;
@@ -58,6 +58,8 @@ public class MainActivity extends Activity {
     private TextView questionText;
     private RadioGroup options;
     private Button restart;
+    private Button back;
+    private Button next;
     private ImageView certificateImage;
     private ProgressBar progress;
     private LinearLayout controlsContainer;
@@ -72,6 +74,8 @@ public class MainActivity extends Activity {
         {
             controlsContainer = (LinearLayout) findViewById(R.id.controlsContainer);
             restart = (Button) findViewById(R.id.restart);
+            back = (Button) findViewById(R.id.back);
+            next = (Button) findViewById(R.id.next);
             questionText = (TextView) findViewById(R.id.question);
             options = (RadioGroup) findViewById(R.id.options);
             certificateImage = (ImageView) findViewById(R.id.certificate);
@@ -268,7 +272,12 @@ public class MainActivity extends Activity {
     }
 
     private void defineQuestion(final Poll poll) {
-        questionText.setText(activeQuestionIdx + 1 + ". " + poll.getQuestion());
+        if (noQuestionRetrieved(poll)) {
+            showNoQuestionAvailableView();
+            return;
+        } else {
+            questionText.setText(activeQuestionIdx + 1 + ". " + poll.getQuestion());
+        }
 
         int id = 0;
         for (final String answerOption : poll.getOptions()) {
@@ -284,6 +293,17 @@ public class MainActivity extends Activity {
                 options.addView(option);
             }
         }
+    }
+
+    private void showNoQuestionAvailableView() {
+        questionText.setText("No question available");
+        back.setVisibility(View.INVISIBLE);
+        next.setVisibility(View.INVISIBLE);
+        progress.setVisibility(View.INVISIBLE);
+    }
+
+    private boolean noQuestionRetrieved(Poll poll) {
+        return poll == null;
     }
 
 }

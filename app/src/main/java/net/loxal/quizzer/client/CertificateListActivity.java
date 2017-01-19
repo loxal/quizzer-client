@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
+ * Copyright 2017 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
  */
 
 package net.loxal.quizzer.client;
@@ -7,6 +7,7 @@ package net.loxal.quizzer.client;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import net.loxal.quizzer.client.dto.Certificate;
@@ -18,24 +19,22 @@ import okhttp3.Request;
 public class CertificateListActivity extends Activity {
 
     private String user;
-    private ListView listView;
+    private ListView certificateList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_certificate);
-//        listView.
+
+        certificateList = (ListView) findViewById(R.id.certificateList);
 
         {
             this.user = this.getIntent().getExtras().getString("user");
-
-            System.out.println(this.user);
         }
 
         List<Certificate> certificates = retrieveCertificateForUser();
-        for (Certificate certificate : certificates) {
-            System.out.println("certificate = " + certificate.getId());
-        }
+        ArrayAdapter<Certificate> certificateArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, certificates);
+        certificateList.setAdapter(certificateArrayAdapter);
     }
 
     private List<Certificate> retrieveCertificateForUser() {

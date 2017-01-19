@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
+ * Copyright 2017 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
  */
 
 package net.loxal.quizzer.client.dto;
@@ -40,6 +40,11 @@ public class Certificate {
         this.id = id;
         this.user = user;
         this.session = session;
+    }
+
+    @Override
+    public String toString() {
+        return session + "@" + timestamp.substring(0, 10);
     }
 
     public boolean hasPassed() {

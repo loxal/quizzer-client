@@ -58,7 +58,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:design:25.3.0'
     compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.8.7'
     compile 'org.hibernate:hibernate-validator:5.4.0.Final'

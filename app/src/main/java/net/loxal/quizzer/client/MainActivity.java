@@ -218,7 +218,7 @@ public class MainActivity extends Activity {
         clearChoice();
         showLocalScore();
 
-        showCertificate(); // TODO remove this once certificate list is implemented
+//        showCertificate(); // TODO remove this once certificate list is implemented
     }
 
     private boolean allQuestionsAnswered() {

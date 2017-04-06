@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright 2016 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
+  ~ Copyright 2017 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="105dp"
         android:onClick="restart"
         android:text="@string/restart"
         android:visibility="invisible" />
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/restart"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="140dp"
         android:contentDescription="@string/certificate"
         android:src="@mipmap/ic_verified_user_black_48dp"
         android:visibility="invisible" />
@@ -70,7 +70,7 @@
         <Button
             android:id="@+id/back"
             style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="200dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/previous_question"
             android:onClick="back"
@@ -81,7 +81,7 @@
         <Button
             android:id="@+id/next"
             style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="200dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/next_question"
             android:onClick="next"

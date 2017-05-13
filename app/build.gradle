@@ -25,7 +25,7 @@ android {
         applicationId 'net.loxal.quizzer.client'
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 10
+        versionCode 13
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
         testApplicationId 'quizzer.app'
         versionName '1.0'
